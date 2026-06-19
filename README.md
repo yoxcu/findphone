@@ -73,3 +73,7 @@ Rename the dir/UUID/`package.json`, change the watchapp UI and the `on_app_messa
 have a watch↔host companion. For notification-only extensions (Matrix/SMS/…, no watchapp), drop the
 watchapp and use `ext.notify(...)` + `ext.on_reply` instead — see the stoandl docs and
 `examples/extensions/` in the stoandl repo.
+
+## License
+
+GPLv3, same as [stoandl](https://github.com/yoxcu/stoandl). See [LICENSE](LICENSE).
