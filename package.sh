@@ -11,7 +11,7 @@ echo "Building the watchapp (needs the Pebble SDK — see README)…"
 
 tmp=$(mktemp -d)
 mkdir "$tmp/findphone"
-cp "$here/findphone.py" "$here/stoandl_ext.py" "$here/build/findphone.pbw" "$tmp/findphone/"
+cp "$here/findphone.py" "$here/stoandl_ext.py" "$here/config.example" "$here/build/findphone.pbw" "$tmp/findphone/"
 tar czf "$here/findphone.tar.gz" -C "$tmp" findphone
 rm -rf "$tmp"
 

@@ -1,0 +1,5 @@
+# Find My Phone — per-extension config (~/.config/stoandl/ext/findphone/config).
+# Optional: it works out of the box. Copy this to `config` only to change the ring sound, then
+# `stoandl ext restart findphone`.
+
+sound = /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga

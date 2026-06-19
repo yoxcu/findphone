@@ -48,11 +48,14 @@ Then open **Find My Phone** on the watch → **UP** rings, **DOWN** stops.
 
 Manage it live: `stoandl ext list | disable findphone | enable findphone | restart findphone | uninstall findphone`.
 
-Optional: set the ring sound in `~/.config/stoandl/stoandl.conf`:
+Optional: set the ring sound in the extension's own config, `~/.config/stoandl/ext/findphone/config`
+(copy the bundled `config.example`), then `stoandl ext restart findphone`:
 
 ```ini
-extension.findphone.sound = /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
+sound = /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
 ```
+
+(Setting `extension.findphone.sound` in `stoandl.conf` still works as an override.)
 
 ## Files
 
@@ -61,6 +64,7 @@ extension.findphone.sound = /usr/share/sounds/freedesktop/stereo/alarm-clock-ela
 | `src/c/findphone.c`, `wscript`, `package.json` | the Pebble watchapp |
 | `findphone.py` | the host companion (the stoandl extension) |
 | `stoandl_ext.py` | vendored stoandl extension helper |
+| `config.example` | optional per-extension config template (the ring `sound`) |
 | `package.sh` | build + bundle into `findphone.tar.gz` |
 
 ## Fork it for your own extension
