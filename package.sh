@@ -1,6 +1,6 @@
 #!/bin/sh
 # Build the watchapp and bundle it with the companion into an installable archive:
-#   findphone.tar.gz  (findphone/{findphone.py, stoandl_ext.py, findphone.pbw})
+#   findphone.tar.gz  (findphone/{manifest.json, findphone.py, stoandl_ext.py, findphone.pbw})
 #
 # Then, on the machine running stoandl:  stoandl ext install findphone.tar.gz
 set -e
@@ -11,7 +11,7 @@ echo "Building the watchapp (needs the Pebble SDK — see README)…"
 
 tmp=$(mktemp -d)
 mkdir "$tmp/findphone"
-cp "$here/findphone.py" "$here/stoandl_ext.py" "$here/config.example" "$here/build/findphone.pbw" "$tmp/findphone/"
+cp "$here/manifest.json" "$here/findphone.py" "$here/stoandl_ext.py" "$here/config.example" "$here/build/findphone.pbw" "$tmp/findphone/"
 tar czf "$here/findphone.tar.gz" -C "$tmp" findphone
 rm -rf "$tmp"
 

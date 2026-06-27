@@ -37,11 +37,15 @@ App UUID: `de72f1d0-1111-4a17-9a6b-0123456789ab` (in `package.json`; the compani
 ```sh
 pebble build                     # compiles the watchapp → build/findphone.pbw
 ./package.sh                     # builds + bundles findphone.tar.gz (watchapp + companion)
-stoandl ext install findphone.tar.gz   # extracts to ~/.config/stoandl/ext/findphone/, sideloads the
-                                       # .pbw onto the watch, enables + starts it — no daemon restart
+stoandl ext install findphone.tar.gz   # extracts to ~/.config/stoandl/ext/findphone/, installs the
+                                       # watchapp, enables + starts it — no daemon restart
 ```
 
 Then open **Find My Phone** on the watch → **UP** rings, **DOWN** stops.
+
+The manifest declares `"watchapps": ["findphone.pbw"]`, so stoandl keeps the watchapp installed for you:
+it's (re)installed on install/enable and on every watch connect (idempotently — bump the `package.json`
+version to ship a watchapp update), and removed on disable/uninstall.
 
 (You can also install the watchapp by hand for testing: `pebble install --phone <watch-ip>`, or
 `stoandl sideload build/findphone.pbw`.)

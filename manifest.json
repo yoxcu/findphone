@@ -1,0 +1,7 @@
+{
+  "name": "findphone",
+  "author": "yoxcu",
+  "version": "1.0.0",
+  "description": "Find My Phone — open the watchapp, UP rings the host, DOWN stops.",
+  "watchapps": ["findphone.pbw"]
+}
